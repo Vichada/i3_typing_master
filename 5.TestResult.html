@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Master - My Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #4a5568;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 1.2em;
+        }
+
+        .user-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-info span {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #00d2d3, #54a0ff);
+            box-shadow: 0 4px 15px rgba(84, 160, 255, 0.3);
+        }
+
+        .page {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .page h2 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .page p {
+            color: #718096;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-table thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .results-table th {
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .results-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .results-table tr:hover {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .results-table td:nth-child(2) {
+            color: #00d2d3;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .results-table td:nth-child(3) {
+            color: #10ac84;
+            font-weight: 700;
+        }
+
+        .results-table td:nth-child(5) {
+            color: #5f27cd;
+            font-weight: 600;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-btn {
+                width: 200px;
+                padding: 15px;
+            }
+
+            .page {
+                padding: 25px 20px;
+            }
+
+            .results-table {
+                font-size: 14px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 12px 8px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .results-table {
+                font-size: 12px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 10px 5px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .page h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Typing Master</h1>
+            <p>Master your typing speed and accuracy</p>
+        </div>
+
+        <div class="user-info" id="userInfo" style="display: none;">
+            <span id="welcomeMessage">Welcome back!</span>
+            <button class="btn" onclick="logout()" style="margin-left: 15px;">Logout</button>
+        </div>
+
+        <div class="nav">
+            <button class="nav-btn" onclick="location.href='1.homePage.html'">Home</button>
+            <button class="nav-btn" onclick="location.href='4.userLoginPage.html'">Login</button>
+            <button class="nav-btn" onclick="location.href='2.userRegister.html'">Register</button>
+            <button class="nav-btn" onclick="location.href='3.userResetPassword.html'">Reset Password</button>
+            <button class="nav-btn" onclick="location.href='6.TypingTest.html'">Typing Test</button>
+            <button class="nav-btn active">My Results</button>
+            <button class="nav-btn" onclick="location.href='7.AboutUs.html'">About Us</button>
+        </div>
+
+        <div class="page active">
+            <h2>Your Typing Test Results</h2>
+            <p style="margin-bottom: 20px;">
+                Track your progress and see how you're improving over time.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>WPM</th>
+                        <th>Accuracy</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTableBody">
+                    <tr>
+                        <td>2024-06-04</td>
+                        <td>45</td>
+                        <td>95%</td>
+                        <td>2:30</td>
+                        <td>✅ Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-03</td>
+                        <td>42</td>
+                        <td>88%</td>
+                        <td>3:15</td>
+                        <td>✅ Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-02</td>
+                        <td>38</td>
+                        <td>92%</td>
+                        <td>2:45</td>
+                        <td>✅ Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="location.href='6.TypingTest.html'" style="font-size: 18px; padding: 15px 40px;">
+                    Take New Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate localStorage for demonstration
+        const testResults = [
+            { date: '2024-06-04', wpm: 45, accuracy: 95, time: '2:30' },
+            { date: '2024-06-03', wpm: 42, accuracy: 88, time: '3:15' },
+            { date: '2024-06-02', wpm: 38, accuracy: 92, time: '2:45' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserResults();
+        });
+
+        function loadUserResults() {
+            // For demonstration, using the test data above
+            const tableBody = document.getElementById('resultsTableBody');
+            tableBody.innerHTML = '';
+            testResults.forEach(result => {
+                const row = tableBody.insertRow();
+                row.innerHTML = `
+                    <td>${result.date}</td>
+                    <td>${result.wpm}</td>
+                    <td>${result.accuracy}%</td>
+                    <td>${result.time}</td>
+                    <td>✅ Completed</td>
+                `;
+            });
+        }
+
+        function logout() {
+            alert('Logged out successfully!');
+        }
+    </script>
+</body>
+</html>
