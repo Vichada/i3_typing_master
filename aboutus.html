@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Typing Master</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Open+Sans&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #f5f0ff;
+      color: #4b3f72;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #ddd6f3;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #c4bbea;
+      box-shadow: 0 2px 8px rgba(75, 63, 114, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: 1.5px;
+      color: #4b3f72;
+      cursor: default;
+      text-shadow: 0 1px 2px rgba(75, 63, 114, 0.1);
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #6c5ce7;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(107, 92, 231, 0.15);
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #6c5ce7;
+      color: #f5f0ff;
+      box-shadow: 0 4px 12px rgba(107, 92, 231, 0.5);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    main {
+      flex: 1;
+      max-width: 700px;
+      margin: 60px auto 80px;
+      background: linear-gradient(135deg, #e7e0ff 0%, #f5f0ff 100%);
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 30px rgba(107, 92, 231, 0.15);
+      text-align: center;
+      color: #4b3f72;
+    }
+
+    main h2 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 6px rgba(75, 63, 114, 0.1);
+      letter-spacing: 1px;
+    }
+
+    main p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-weight: 600;
+      color: #6b5dc3;
+    }
+
+    footer {
+      background-color: #ddd6f3;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 0.95rem;
+      color: #4b3f72;
+      border-top: 1px solid #c4bbea;
+      box-shadow: 0 -2px 6px rgba(75, 63, 114, 0.05);
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 40px 20px 60px;
+        padding: 40px 25px;
+      }
+      main h2 {
+        font-size: 2.2rem;
+      }
+      main p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Typing Master</h1>
+    <nav>
+      <a href="Landingpage.html">Home</a>
+      <a href="login_page.html">Login</a>
+      <a href="register_page.html">Register</a>
+      <a href="6_UsertypingtestPage .html">Typing Test</a>
+      <a href="results.html">Results</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Typing Master</h2>
+    <p>
+      At Typing Master, our mission is to help users improve their typing speed and accuracy through engaging, interactive tests. Whether you're a beginner or a professional looking to sharpen your skills, our platform offers the perfect environment to practice and track your progress.<br><br>
+      We believe that fast and accurate typing can boost productivity and confidence in today’s digital world. That’s why we focus on creating a user-friendly experience backed by solid educational principles. Join us and become a Typing Master!
+    </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Typing Master. All rights reserved.
+  </footer>
+
+</body>
+</html>

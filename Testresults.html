@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typing Result Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Open+Sans&display=swap');
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #f5f0ff; /* very light purple */
+      color: #4b3f72; /* dark muted purple */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .result-summary {
+      background: #eee8ff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 6px 18px rgba(107, 92, 231, 0.15);
+      text-align: center;
+    }
+
+    .result-summary h3 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1.15rem;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #d8d0ff;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+    }
+
+    .label {
+      color: #574f85;
+    }
+
+    .value {
+      color: #3a3270;
+    }
+
+    @media (max-width: 480px) {
+      .result-summary {
+        max-width: 95%;
+        padding: 20px;
+      }
+
+      .result-summary h3 {
+        font-size: 1.5rem;
+      }
+
+      .stat {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="result-summary">
+    <h3>Your Results</h3>
+    <div class="stats">
+      <div class="stat">
+        <span class="label">Words Per Minute (WPM):</span>
+        <span class="value">72</span>
+      </div>
+      <div class="stat">
+        <span class="label">Accuracy:</span>
+        <span class="value">94%</span>
+      </div>
+      <div class="stat">
+        <span class="label">Time Taken:</span>
+        <span class="value">1:30</span>
+      </div>
+      <div class="stat">
+        <span class="label">Errors:</span>
+        <span class="value">5</span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
