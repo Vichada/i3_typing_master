@@ -1,7 +1,7 @@
 /* From Uiverse.io by akshat-patel28 */ 
 .form-container {
   width: 350px;
-  height: 500px;
+  height: auto;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -132,4 +132,19 @@
     .google-icon {
   font-size: 18px;
   margin-bottom: 1px;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0 0 20px 0;
+  font-size: 12px;
+  color: #747474;
+  line-height: 1.4;
+}
+
+/* Additional styles for register page */
+.form-container.register {
+  height: 580px;
 }
