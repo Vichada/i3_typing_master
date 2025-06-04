@@ -12,11 +12,11 @@ The homepage that welcomes users and introduces them to Typing Master. It provid
 
 ### User Registration Page
 
-Allows new users to create an account by entering their information. User registration enables saving test results and personal progress tracking.
+Allows new users to create an account by entering their information.
 
 ### User Login Page
 
-Registered users can securely log in to access their personal typing dashboard and view test results.
+Registered users can log in by Google, Apple, Email. If users forget password, they can click on the link then users can reset their password.
 
 ### Reset Password Page
 
@@ -34,14 +34,14 @@ The core functionality of the application. Users take a typing test and receive 
 
 Displays a list of all past typing tests taken by the user. Each entry includes:
 
-- Date of the test
+- Time Taken
 - Words per minute (WPM)
 - Accuracy
 - Errors made
 
 ### About Us Page
 
-Provides background information about the Typing Master project, including its purpose, goals, and development team.
+Provides background information about the Typing Master project, including its purpose, and goals.
 
 ---
 
